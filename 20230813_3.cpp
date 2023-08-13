@@ -1,8 +1,7 @@
-//Beakjoon Online Judge #12015
+//Beakjoon Online Judge #14002, #14003
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include <unordered_map>
 using namespace std;
 
 int main(){
@@ -12,7 +11,7 @@ int main(){
     cin >> num;
     vector<int> v(num);
     vector<int> a;
-    unordered_map<int, int> ans1;
+    vector<pair<int, int>> ans1(num);
     vector<int> ans2;
     int intmin = - 1000000001;
     for(int i = 0; i<num; i++){
@@ -26,16 +25,20 @@ int main(){
         else{
             a[index] = v[i];
         }
-        ans1[v[i]] = (index == 0) ? intmin : a[index-1];
+        ans1[i] = {v[i], index};
+
+        
     }
 
     
-    int tmp = a.back();
-    while (tmp!=intmin)
-    {
-        ans2.emplace_back(tmp);
-        tmp = ans1[tmp];
+    int cnt = a.size()-1;
+    for(int i = num-1; i>=0; i--){
+        if(cnt == ans1[i].second){
+            ans2.push_back(ans1[i].first);
+            cnt--;
+        }
     }
+
     cout << a.size() << '\n';
     for(int i = ans2.size()-1; i>=0; i--){
         cout << ans2[i] << ' ';
