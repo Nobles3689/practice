@@ -1,4 +1,4 @@
-//Beakjoon Online Judge #1753
+//Beakjoon Online Judge #1753 다익스트라 알고리즘
 #include <iostream>
 #include <queue>
 #include <vector>

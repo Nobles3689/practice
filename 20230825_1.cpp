@@ -1,4 +1,4 @@
-//Beakjoon Online Judge #1918
+//Beakjoon Online Judge #1918 queue, stack
 #include <iostream>
 #include <queue>
 #include <stack>

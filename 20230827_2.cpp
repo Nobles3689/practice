@@ -1,4 +1,4 @@
-//Beakjoon Online Judge #11444
+//Beakjoon Online Judge #11444 분할정복을 이용한 거듭제곱(피보나치 수)
 #include <iostream>
 #include <vector>
 #include <stack>

@@ -1,4 +1,4 @@
-//Beakjoon Online Judge #11404
+//Beakjoon Online Judge #11404 플로이드 와샬 알고리즘
 #include <iostream>
 #include <algorithm>
 using namespace std;
