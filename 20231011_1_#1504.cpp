@@ -4,7 +4,7 @@
 #include <queue>
 using namespace std;
 
-#define INF 999999
+#define INF 99999999
 
 pair<int, int> list[5] = { {0,2}, {0,3}, {2,3}, {1,2}, {1,3} };
 
@@ -62,7 +62,7 @@ int main(){
     }
     
     res[5] = min(res[0]+res[2]+res[4], res[1]+res[2]+res[3]);
-    if(res[0]>=INF||res[1]>=INF||res[2]>=INF||res[3]>=INF||res[4]>=INF){
+    if(res[5]>=INF){
         res[5] = -1;
     }
     
