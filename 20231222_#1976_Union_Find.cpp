@@ -1,4 +1,4 @@
-//Beakjoon Online Judge #1717
+//Beakjoon Online Judge #1976
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -54,19 +54,27 @@ int main(){
     cin.tie(NULL);
     int n, m;
     cin >> n >> m;
+    vector<int> plan(m);
     DS DS(n);
     DS.init();
-    for(int i = 0; i<m; i++){
-        int flag, a, b;
-        cin >> flag >> a >> b;
-        if(flag==0){
-            if(a!=b) DS.union_(a, b); 
-            
-        }
-        else{
-            if(DS.find(a) == DS.find(b)) cout << "YES\n";
-            else cout << "NO\n";
+    for(int i = 1; i<=n; i++){
+        for(int j = 1; j<=n; j++){
+            int tmp;
+            cin >> tmp;
+            if(tmp == 1){
+                DS.union_(i, j);
+            }
         }
     }
+    bool flag = true;
+    for(int i = 0; i<m; i++){
+        cin >> plan[i];
+        if(i!=0){
+            if(DS.find(plan[i-1]) != DS.find(plan[i])) flag = false;
+        }
+    }
+    if(flag) cout << "YES";
+    else cout << "NO";
+
     return 0;
 }
