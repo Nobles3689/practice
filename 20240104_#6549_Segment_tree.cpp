@@ -16,7 +16,7 @@ int init(int s, int e, int node){
     int l_index = init(s, mid, node*2);
     int r_index = init(mid+1, e, node*2+1);
 
-    return seg[node] = hight[l_index] < hight[r_index] ? l_index : r_index;
+    return seg[node] = hight[l_index] <= hight[r_index] ? l_index : r_index;
 }
 
 int find(int s, int e, int node, int l, int r){
